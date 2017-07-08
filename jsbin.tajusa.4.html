@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by Szimonetta (http://jsbin.com/tajusa/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="filmvadász">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+<style id="jsbin-css">
+.all {
+  height: 1610px;
+  width: 1070px;
+  background-color: #181818;
+  margin: 0px;
+  padding: 0px;
+  color: #cdcdcd;
+}
+a {
+  color: #cdcdcd;
+}
+a:hover {
+  text-decoration: none;
+}
+header {
+  height: 80px;
+  width: 1000px;
+  margin-left: 35px;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/header-bg.png');
+}
+.logo {
+  height: 80px;
+  width: 600px;
+  float: left;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/logofv.png') ;
+}
+.search {
+  height: 80px;
+  width: 400px;
+  float: right;
+}
+.searchbox {
+  height: 30px;
+  width: 300px;
+  margin-left: 25px;
+  margin-top: 25px;
+  float: left;
+  color: #cdcdcd;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/search-form.png');
+}
+.searchbox p {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.searchicon {
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin-right: 45px;
+  margin-top: 25px;
+}
+.searchicon img {
+  height: 30px;
+  width: 30px;
+}
+.help {
+  height: 50px;
+  width: 1000px;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/header-bg.png');
+  margin-top: 10px;
+  margin-left: 35px;
+  border-radius: 5px;
+}
+.help li {
+  display: inline;
+  position: relative;
+  left: 20px;
+  top: 15px;
+  padding: 20px;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/menu-delimiter.png');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.help a {
+  text-decoration: none;
+}
+main {
+  height: 1340px;
+  width: 1070px;
+  background-color: #181818;
+}
+.left {
+  height: 610px;
+  width: 150px;
+  margin-left: 35px;
+  margin-top: 20px;
+  float: left;
+}
+.left div {
+  height: 20px;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/title-bg-left.png');
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.left li{
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/left-menu-bg.png');
+  padding: 4px;
+}
+.center {
+  height: 1200px;
+  width: 600px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+article {
+  float: left;
+  height: 250px;
+  width: 150px;
+}
+.center article img {
+  height: 200px;
+  width: 145px;
+  border: 2px solid grey;
+}
+article h6 a {
+  color: #ff1717;
+  font-size: 12px;
+}
+article p {
+  font-size: 12px;
+}
+.pages {
+  height: 30px;
+  width: 650px;
+  margin-top: 20px;
+  color: #fff;
+  float: left;
+}
+.pages li {
+  display: inline;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+  background-color: #201f20;
+}
+.pages li:hover {
+  background-color: #ff1717;
+}
+.pages a {
+  text-decoration: none;
+}
+.topten, .trailers {
+  height: 200px;
+  width: 230px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.topten li, .trailers li {
+  display: block;
+  padding: 3px;
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/right-menu-bg.png');
+  font-size: 13px;
+}
+.topten div, .trailers div {
+  background-image: url('https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/title-bg-right.png');
+  border-radius: 3px;
+  padding: 3px;
+}
+.trailers img {
+  height: 20px;
+  width: 20px;
+}
+footer {
+  height: 100px;
+  width: 1000px;
+  background-color: #201f20;
+  margin-left: 35px;
+  margin-top: 30px;
+  color: #cdcdcd;
+}
+footer p {
+  height: 20px;
+  width: 140px;
+  margin-top: 35px;
+  margin-left: 400px;
+  float: left;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="all">
+  <header>
+    <a href="#"><div class="logo"></div></a>
+    <div class="search">
+      <div class="searchbox">
+        <p>Keresés</p>
+      </div>
+      <div class="searchicon">
+        <a href="#"><img src="https://filmvadasz.org/wp-content/themes/adultphoto-01-red/images/search-button.png" alt="searchicon"></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="help">
+    <ul>
+      <li><a href="#">Segítség</a></li>
+      <li><a href="#">Tartalomjegyzék</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="left">
+      <div><h4>Kategóriák</h4></div>
+      <ul>
+        <li><a href="#">Akció</a></li>
+        <li><a href="#">Animáció</a></li>
+        <li><a href="#">Családi</a></li>
+        <li><a href="#">Dokumentum</a></li>
+        <li><a href="#">Dráma</a></li>
+        <li><a href="#">Egyéb</a></li>
+        <li><a href="#">Életrajzi</a></li>
+        <li><a href="#">Fantasy</a></li>
+        <li><a href="#">Feliratos</a></li>
+        <li><a href="#">Gengszter</a></li>
+        <li><a href="#">Háborús</a></li>
+        <li><a href="#">Horror</a></li>
+        <li><a href="#">Ismeretterjesztő</a></li>
+        <li><a href="#">Kaland</a></li>
+        <li><a href="#">Katasztrófa</a></li>
+        <li><a href="#">Krimi</a></li>
+        <li><a href="#">Mese</a></li>
+        <li><a href="#">PREMIER</a></li>
+        <li><a href="#">Romantikus</a></li>
+        <li><a href="#">SciFi</a></li>
+        <li><a href="#">SOROZAT</a></li>
+        <li><a href="#">Thriller</a></li>
+        <li><a href="#">Történelmi</a></li>
+        <li><a href="#">Vígjáték</a></li>
+        <li><a href="#">Western</a></li>
+        <li><a href="#">Zenés</a></li>
+      </ul>
+    </section>
+
+    <section class="center">
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/halalos-iramban-8-163x240.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Halálos iramban 8</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a>, <a href="#">PREMIER</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/vaiana-2016-163x240.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Vaiana</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Animáció</a>, <a href="#">Mese</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/forradalom.napja_-163x240.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">A forradalom napján</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://1.bp.blogspot.com/-dV04Neogt-s/WNLAk2XHp8I/AAAAAAAAhTk/1-CNBfYMg5kAoqfks_md7wb__H6ZVF6KgCLcB/s320/Underworld%2B-%2BV%25C3%25A9r%25C3%25B6z%25C3%25B6n.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Underworld - Vérözön</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/100-streets-203x300.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az új kezdet útjai</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Dráma</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://4.bp.blogspot.com/-2bM9iD4A7ow/WHvZ-g9RTlI/AAAAAAAAhCw/WP5jbIDTpic5HaUXClkdLO2nhgqUyD1oACLcB/s320/A%2Bfegyvertelen%2Bkatona.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">A fegyvertelen katona</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a>, <a href="#">Háborús</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/Az-azsiai-kapcsolat.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az ázsiai kapcsolat</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/doctor-strange-200x300.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Doctor Strange</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/Live-by-Night.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az éjszaka törvénye</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Krimi</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/assassins-creed-203x300.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Assassin's Creed</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/elet-2017.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Élet</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">PREMIER</a>, <a href="#">SciFi</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/Home.2009.HUN_-1.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Otthonunk</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Dokumentum</a>, <a href="#">Ismeretterjesztő</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/lion.king_-2.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az oroszlánkirály</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Animáció</a>, <a href="#">Mese</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/lion.king_.2-2.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az oroszlánkirály 2 - S...</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Animáció</a>, <a href="#">Mese</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/lion.king_.3-2.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Az oroszlánkirály 3 - H...</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Animáció</a>, <a href="#">Mese</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="http://1.bp.blogspot.com/-6T1aP-0hR1w/TcprCSyr6ZI/AAAAAAAACDA/hAsX_0kPrYs/s1600/16utca.jpeg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">16 utca</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/2012-jegkorszak-letoltes-1.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">2012 - Jégkorszak</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Katasztrófa</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/passe-passe-2.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">Egy pasi, egy nő, sok lé ...</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Vígjáték</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="https://filmvadasz.org/wp-content/uploads/2017/04/302BPerc2Bvagy2BAnnyi2BSem-1.jpg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">30 perc vagy annyi se</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Akció</a>, <a href="#">Vígjáték</a></p>
+      </article>
+      <article>
+        <a href="#"><img src="http://1.bp.blogspot.com/-F2iHA6TqBOo/Tf8vyZ9i9JI/AAAAAAAACX4/MOO-LPX8GFk/s1600/8mm.jpeg" alt="mooviepicture"></a>
+        <h6 class="title"><a href="#">8mm</a></h6>
+        <p class="common">Filmvadasz.org - Film letöltés</p>
+        <p class="category"><a href="#">Thriller</a></p>
+      </article>
+      <article>
+          <ul class="pages">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">Következő &gt;</a></li>
+            <li><a href="#">Utolsó &gt;&gt;</a></li>
+          </ul>
+      </article>
+    </section>
+
+    <section class="right">
+      <article class="topten">
+        <div>Top 10</div>
+        <ul>
+          <li><a href="#">Élet</a></li>
+          <li><a href="#">Zsivány egyes – Egy Star Wars történet</a></li>
+          <li><a href="#">Assassin’s Creed</a></li>
+          <li><a href="#">A fegyvertelen katona</a></li>
+          <li><a href="#">Underworld – Vérözön</a></li>
+          <li><a href="#">Az éjszaka törvénye</a></li>
+          <li><a href="#">Utazók</a></li>
+          <li><a href="#">Logan-Farkas</a></li>
+          <li><a href="#">Egy pasi, egy nő, sok lé meg egy BMW</a></li>
+          <li><a href="#">Az új kezdet útjai</a></li>
+        </ul>
+      </article>
+      <article class="trailers">
+        <div><img src="https://filmvadasz.org/wp-includes/images/rss.png" alt="maintrailericon">Filmtrailer.hu</div>
+        <ul>
+          <li><a href="#">Star Wars: Az utolsó Jedik trailer</a></li>
+          <li><a href="#">Halálos iramban 8 filmkritika: Tökéletlen</a></li>
+          <li><a href="#">Arthur király – A kard legendája – új</a></li>
+          <li><a href="#">Az – Stephen King újragondolt</a></li>
+          <li><a href="#">Thor: Ragnarök trailer</a></li>
+          <li><a href="#">A Twin Peaks legújabb évada itthon is</a></li>
+          <li><a href="#">4 Batman(es) film érkezik 2019-ben?</a></li>
+          <li><a href="#">6,9 a Richter-skálán – feliratos előzetessel</a></li>
+          <li><a href="#">Andy Vajna Puskás Ferencről szóló filmen</a></li>
+          <li><a href="#">Szívvel-lélekkel – feliratos előzetessel</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Filmvadasz.org</p>
+  </footer>
+</div>
+
+</body>
+</html>
