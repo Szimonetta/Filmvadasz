@@ -1,5 +1,5 @@
 # Filmvadasz
-This is a copy of a web page. The original web page is filmvadasz.org.
+I recreated the web page from scratch. The original web page is filmvadasz.org.
 
 # Built with
 - HTML
